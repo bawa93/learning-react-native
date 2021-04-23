@@ -4,6 +4,7 @@ import {StyleSheet, Text, View, Button, TextInput} from 'react-native';
 
 export default function App() {
     const [name, setName] = useState('deep');
+    const [info, setInfo] = useState('');
     const clickHandler = () => {
         setName('Chun lee')
     }
@@ -15,7 +16,10 @@ export default function App() {
             <View style={styles.button}>
                 <Button title="Update Me" onPress={clickHandler}/>
             </View>
+            <Text>Name</Text>
             <TextInput style={styles.input} placeholder="eg. 90" onChangeText={(val) => setName(val)}/>
+            <Text>Info</Text>
+            <TextInput style={styles.input} placeholder="eg. something about me" onChangeText={(val) => setInfo(val)}/>
             <StatusBar style="auto"/>
         </View>
     );
